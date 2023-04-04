@@ -1,16 +1,16 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "create-block/todo-list",
+  "name": "outthink/gfentry-to-block",
   "version": "0.1.0",
-  "title": "Todo List",
+  "title": "GF Entry To Blocks",
   "category": "widgets",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "icon": "embed-post",
+  "description": "Pulls in a gravity form entry as headings and paragraph blocks",
   "supports": {
     "html": false
   },
-  "textdomain": "todo-list",
+  "textdomain": "gfetc",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css"

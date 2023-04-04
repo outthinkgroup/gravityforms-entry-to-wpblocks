@@ -20,6 +20,7 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 import metadata from './block.json';
+import StarGfEntryChooser from './StarGfEntryChooser';
 
 /**
  * Every block starts by registering a new block type definition.
@@ -30,7 +31,7 @@ registerBlockType( metadata.name, {
 	/**
 	 * @see ./edit.js
 	 */
-	edit: Edit,
+	edit: StarGfEntryChooser,
 
 	/**
 	 * @see ./save.js
@@ -38,27 +39,3 @@ registerBlockType( metadata.name, {
 	save,
 } );
 
-const { createHigherOrderComponent } = wp.compose;
-const { InspectorControls } = wp.blockEditor;
-const { PanelBody } = wp.components;
-
-const withInspectorControls = createHigherOrderComponent( ( BlockEdit ) => {
-    return ( props ) => {
-				console.log({...props})
-				if(props.name !== 'create-block/todo-list') return <BlockEdit {...props} />
-        return (
-            <>
-                <BlockEdit { ...props } />
-                <InspectorControls>
-                    <PanelBody>My custom control</PanelBody>
-                </InspectorControls>
-            </>
-        );
-    };
-}, 'withInspectorControl' );
-
-wp.hooks.addFilter(
-    'editor.BlockEdit',
-    'my-plugin/with-inspector-controls',
-    withInspectorControls
-);
