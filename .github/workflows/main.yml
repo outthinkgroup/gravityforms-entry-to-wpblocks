@@ -10,7 +10,7 @@ jobs:
     name: Build_Plugin_Artifact
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 19
@@ -20,7 +20,7 @@ jobs:
       - run: mkdir -p builds/
       - run: zip -r builds/gfetc.zip ./* -x "node_modules/*"
 
-      - uses: actions/upload-artifact@3
+      - uses: actions/upload-artifact@v3
         with:
           name: release
           path: builds/gfetc.zip
