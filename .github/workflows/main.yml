@@ -17,5 +17,13 @@ jobs:
       - run: npm install
       - run: npm build
 
+      - run: mkdir -p builds/
+      - run: zip -r builds/gfetc.zip ./* -x "node_modules/*"
+
+      - uses: actions/upload-artifact@3
+        with:
+          name: release
+          path: builds/gfetc.zip
+
 
 
