@@ -11,16 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - name: PHP Composer
-        # You may pin to the exact commit or the version.
-        # uses: baschny/php-composer-action@93b5aef92179c5ebba8824db8d34748301c6a70e
-        uses: baschny/php-composer-action@v1
-        with:
-          command: install
-
       - uses: actions/setup-node@v3
         with:
           node-version: 19
       - run: npm install
       - run: npm build
+
+
 
