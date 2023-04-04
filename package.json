@@ -15,7 +15,9 @@
 		"start": "wp-scripts start"
 	},
 	"dependencies": {
-		"@wordpress/scripts": "^26.0.0",
 		"downshift": "^7.6.0"
+	},
+	"devdependencies": {
+		"@wordpress/scripts": "^26.0.0",
 	}
 }
