@@ -17,7 +17,7 @@
 	"dependencies": {
 		"downshift": "^7.6.0"
 	},
-	"devdependencies": {
+	"devDependencies": {
 		"@wordpress/scripts": "^26.0.0"
 	}
 }
