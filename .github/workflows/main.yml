@@ -17,12 +17,12 @@ jobs:
       - run: npm install
       - run: npm run build
 
-      - run: npm run plugin-zip
-
       - uses: actions/upload-artifact@v3
         with:
           name: gfetc
-          path: gfetc.zip
+          path: |
+            gfetc.php
+            build/
 
 
 
