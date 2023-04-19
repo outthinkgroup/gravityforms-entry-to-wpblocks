@@ -15,12 +15,14 @@
 		"start": "wp-scripts start"
 	},
 	"dependencies": {
+		"d3": "^7.8.4",
+		"d3-cloud": "^1.2.5",
 		"downshift": "^7.6.0"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^26.0.0"
 	},
-	"files":[
+	"files": [
 		"build",
 		"gfetc.php"
 	]

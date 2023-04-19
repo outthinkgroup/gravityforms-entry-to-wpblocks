@@ -20,9 +20,15 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function outthink_gfentry_to_block_init() {
-	register_block_type( __DIR__ . '/build' );
+	register_block_type( __DIR__ . '/build/wordcloud' );
+	register_block_type( __DIR__ . '/build/gfentry' );
 }
 add_action( 'init', 'outthink_gfentry_to_block_init' );
+
+
+/*╭────────────────────╮
+  │    [   AJAX   ]    │
+  ╰────────────────────╯*/
 
 add_action('wp_ajax_gfetc_get_stars', function(){
 	$args = [

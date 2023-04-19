@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "outthink/gfentry-to-block",
+  "name": "outthink/wordcloud",
   "version": "0.1.0",
-  "title": "GF Entry To Blocks",
+  "title": "gravity form entries word cloud",
   "category": "widgets",
   "icon": "embed-post",
-  "description": "Pulls in a gravity form entry as headings and paragraph blocks",
+  "description": "Displays a word cloud of a entry answers",
   "supports": {
     "html": false
   },
