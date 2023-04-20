@@ -26,6 +26,9 @@ function buildCloud(words){
 }
 function Wordcloud({ words, setter, attrs }) {
 	const svgWordData = useMemo(()=>buildCloud(words), [ words ])
+	useEffect(()=>{
+		setter({data:svgWordData})
+	},[ svgWordData ])
 	return <svg viewBox="0 0 640 400" textAnchor="middle" style={{ border: '1px soild black' }}>
 		<g>
 			{svgWordData.length ? svgWordData.map(({ size, x, y, rotate, text }) => (

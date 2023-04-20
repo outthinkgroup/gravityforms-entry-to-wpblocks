@@ -97,6 +97,22 @@ add_action('wp_ajax_gfetc_gf_entries', function (){
 	$form_id = $data['form_id'];
  	exit(json_encode(\GFAPI::get_entries($form_id)));
 });
+add_action('wp_ajax_gfetc_gf_answers', function (){
+    $data = gfetc_json_body();
+    ['form_id'=>$form_id, 'question_id'=>$question_id] = $data;
+    global $wpdb;
+    $sql = $wpdb->prepare("
+    SELECT entry_id, meta_value 
+    FROM 
+        {$wpdb->prefix}gf_entry_meta
+    WHERE
+        form_id = %s
+    AND
+        meta_key = %s
+    ", $form_id, $question_id);
+    $res = $wpdb->get_results($sql, \ARRAY_A);
+    exit(json_encode(array_values($res)));
+});
 
 add_action('wp_ajax_gfetc_gf_entry', function (){
 	$data = gfetc_json_body();

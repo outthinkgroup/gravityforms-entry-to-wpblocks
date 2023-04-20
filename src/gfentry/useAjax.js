@@ -1,4 +1,5 @@
 import {useState} from "@wordpress/element"
+
 export default function useAjax(action, defaultData=null){
 	const [error,setError] = useState(null)	
 	const [data, setData] = useState(defaultData)

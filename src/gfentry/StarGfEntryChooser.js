@@ -131,7 +131,7 @@ async function fetcher(query, formId) {
 	return res;
 }
 
-async function getForms() {
+export async function getForms() {
 	const { url } = window.wp.ajax.settings
 	const data = {}
 	const res = fetch(`${url}?action=gfetc_forms`, {

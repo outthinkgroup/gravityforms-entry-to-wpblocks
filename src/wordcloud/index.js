@@ -29,6 +29,12 @@ import metadata from './block.json';
  */
 registerBlockType( metadata.name, {
 	attributes:{
+		formId:{
+			type:'number',
+		},
+		questionId:{
+			type:'number',
+		},
 		words:{type:'array',default:["one","two","three","four"]},
 		data:{
 			type:'array',
